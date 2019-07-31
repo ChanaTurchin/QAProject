@@ -23,7 +23,7 @@ namespace API.Controllers
             }
             catch (Exception e)
             {
-                return BadRequest("system error " + e);
+                return BadRequest("system error: " + e);
             }
            
         }
