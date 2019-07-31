@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ProjectChaniRuthiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Answer">
+    <Key>
+      <PropertyRef Name="answerId" />
+    </Key>
+    <Property Name="answerId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="questionId" Type="Int32" Nullable="false" />
+    <Property Name="answer_userId" Type="Int32" Nullable="false" />
+    <Property Name="checked" Type="Boolean" />
+    <Property Name="answerDate" Type="DateTime" Precision="3" />
+    <Property Name="fileName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Question" Relationship="Self.FK_Answers_Questions" FromRole="Answers" ToRole="Questions" />
+    <NavigationProperty Name="Comments" Relationship="Self.FK_Comments_Answers" FromRole="Answers" ToRole="Comments" />
+    <NavigationProperty Name="User" Relationship="ProjectChaniRuthiModel.FK_Answers_Users" FromRole="Answer" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="categoryId" />
+    </Key>
+    <Property Name="categoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="categoryName" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Category_Question" Relationship="Self.FK_Category_Question_Categories" FromRole="Categories" ToRole="Category_Question" />
+  </EntityType>
+  <EntityType Name="Category_Question">
+    <Key>
+      <PropertyRef Name="category_question_id" />
+    </Key>
+    <Property Name="category_question_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="questionId" Type="Int32" Nullable="false" />
+    <Property Name="categoryId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Category" Relationship="Self.FK_Category_Question_Categories" FromRole="Category_Question" ToRole="Categories" />
+    <NavigationProperty Name="Question" Relationship="Self.FK_Category_Question_Questions" FromRole="Category_Question" ToRole="Questions" />
+  </EntityType>
+  <EntityType Name="Comment">
+    <Key>
+      <PropertyRef Name="commentId" />
+    </Key>
+    <Property Name="commentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="commentBody" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="answerId" Type="Int32" />
+    <Property Name="comment_userId" Type="Int32" />
+    <Property Name="commentDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Answer" Relationship="Self.FK_Comments_Answers" FromRole="Comments" ToRole="Answers" />
+    <NavigationProperty Name="User" Relationship="ProjectChaniRuthiModel.FK_Comments_Users" FromRole="Comment" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Question">
+    <Key>
+      <PropertyRef Name="questionId" />
+    </Key>
+    <Property Name="questionId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="questionTitle" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="fileName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="question_userId" Type="Int32" Nullable="false" />
+    <Property Name="requirement" Type="Int32" />
+    <Property Name="questionDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Answers" Relationship="Self.FK_Answers_Questions" FromRole="Questions" ToRole="Answers" />
+    <NavigationProperty Name="Category_Question" Relationship="Self.FK_Category_Question_Questions" FromRole="Questions" ToRole="Category_Question" />
+    <NavigationProperty Name="Votes" Relationship="Self.FK_Votes_Questions" FromRole="Questions" ToRole="Votes" />
+    <NavigationProperty Name="User" Relationship="ProjectChaniRuthiModel.FK_Questions_Users" FromRole="Question" ToRole="User" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Vote">
+    <Key>
+      <PropertyRef Name="voteId" />
+    </Key>
+    <Property Name="voteId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="questionId" Type="Int32" Nullable="false" />
+    <Property Name="userId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Question" Relationship="Self.FK_Votes_Questions" FromRole="Votes" ToRole="Questions" />
+    <NavigationProperty Name="User" Relationship="ProjectChaniRuthiModel.FK_Votes_Users" FromRole="Vote" ToRole="User" />
+  </EntityType>
+  <Association Name="FK_Answers_Questions">
+    <End Role="Questions" Type="Self.Question" Multiplicity="1" />
+    <End Role="Answers" Type="Self.Answer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Questions">
+        <PropertyRef Name="questionId" />
+      </Principal>
+      <Dependent Role="Answers">
+        <PropertyRef Name="questionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comments_Answers">
+    <End Role="Answers" Type="Self.Answer" Multiplicity="0..1" />
+    <End Role="Comments" Type="Self.Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Answers">
+        <PropertyRef Name="answerId" />
+      </Principal>
+      <Dependent Role="Comments">
+        <PropertyRef Name="answerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Category_Question_Categories">
+    <End Role="Categories" Type="Self.Category" Multiplicity="1" />
+    <End Role="Category_Question" Type="Self.Category_Question" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Categories">
+        <PropertyRef Name="categoryId" />
+      </Principal>
+      <Dependent Role="Category_Question">
+        <PropertyRef Name="categoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Category_Question_Questions">
+    <End Role="Questions" Type="Self.Question" Multiplicity="1" />
+    <End Role="Category_Question" Type="Self.Category_Question" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Questions">
+        <PropertyRef Name="questionId" />
+      </Principal>
+      <Dependent Role="Category_Question">
+        <PropertyRef Name="questionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Votes_Questions">
+    <End Role="Questions" Type="Self.Question" Multiplicity="1" />
+    <End Role="Votes" Type="Self.Vote" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Questions">
+        <PropertyRef Name="questionId" />
+      </Principal>
+      <Dependent Role="Votes">
+        <PropertyRef Name="questionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="ProjectChaniRuthiEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Answers" EntityType="Self.Answer" />
+    <EntitySet Name="Categories" EntityType="Self.Category" />
+    <EntitySet Name="Category_Question" EntityType="Self.Category_Question" />
+    <EntitySet Name="Comments" EntityType="Self.Comment" />
+    <EntitySet Name="Questions" EntityType="Self.Question" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Votes" EntityType="Self.Vote" />
+    <AssociationSet Name="FK_Answers_Questions" Association="Self.FK_Answers_Questions">
+      <End Role="Questions" EntitySet="Questions" />
+      <End Role="Answers" EntitySet="Answers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comments_Answers" Association="Self.FK_Comments_Answers">
+      <End Role="Answers" EntitySet="Answers" />
+      <End Role="Comments" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Category_Question_Categories" Association="Self.FK_Category_Question_Categories">
+      <End Role="Categories" EntitySet="Categories" />
+      <End Role="Category_Question" EntitySet="Category_Question" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Category_Question_Questions" Association="Self.FK_Category_Question_Questions">
+      <End Role="Questions" EntitySet="Questions" />
+      <End Role="Category_Question" EntitySet="Category_Question" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Votes_Questions" Association="Self.FK_Votes_Questions">
+      <End Role="Questions" EntitySet="Questions" />
+      <End Role="Votes" EntitySet="Votes" />
+    </AssociationSet>
+    <EntitySet Name="Users" EntityType="ProjectChaniRuthiModel.User" />
+    <AssociationSet Name="FK_Answers_Users" Association="ProjectChaniRuthiModel.FK_Answers_Users">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Answer" EntitySet="Answers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comments_Users" Association="ProjectChaniRuthiModel.FK_Comments_Users">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Comment" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Questions_Users" Association="ProjectChaniRuthiModel.FK_Questions_Users">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Question" EntitySet="Questions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Votes_Users" Association="ProjectChaniRuthiModel.FK_Votes_Users">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Vote" EntitySet="Votes" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="userId" />
+    </Key>
+    <Property Name="userId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userName" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="9" FixedLength="false" Unicode="true" />
+    <Property Name="pathDirectory" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="grade" Type="Int32" />
+    <Property Name="user_group" Type="Int32" />
+    <Property Name="IsPractitioner" Type="Boolean" />
+    <Property Name="points" Type="Int32" />
+    <NavigationProperty Name="Answers" Relationship="ProjectChaniRuthiModel.FK_Answers_Users" FromRole="User" ToRole="Answer" />
+    <NavigationProperty Name="Comments" Relationship="ProjectChaniRuthiModel.FK_Comments_Users" FromRole="User" ToRole="Comment" />
+    <NavigationProperty Name="Questions" Relationship="ProjectChaniRuthiModel.FK_Questions_Users" FromRole="User" ToRole="Question" />
+    <NavigationProperty Name="Votes" Relationship="ProjectChaniRuthiModel.FK_Votes_Users" FromRole="User" ToRole="Vote" />
+  </EntityType>
+  <Association Name="FK_Answers_Users">
+    <End Type="ProjectChaniRuthiModel.User" Role="User" Multiplicity="1" />
+    <End Type="ProjectChaniRuthiModel.Answer" Role="Answer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="Answer">
+        <PropertyRef Name="answer_userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comments_Users">
+    <End Type="ProjectChaniRuthiModel.User" Role="User" Multiplicity="0..1" />
+    <End Type="ProjectChaniRuthiModel.Comment" Role="Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="Comment">
+        <PropertyRef Name="comment_userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Questions_Users">
+    <End Type="ProjectChaniRuthiModel.User" Role="User" Multiplicity="1" />
+    <End Type="ProjectChaniRuthiModel.Question" Role="Question" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="Question">
+        <PropertyRef Name="question_userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Votes_Users">
+    <End Type="ProjectChaniRuthiModel.User" Role="User" Multiplicity="1" />
+    <End Type="ProjectChaniRuthiModel.Vote" Role="Vote" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="Vote">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

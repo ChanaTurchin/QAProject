@@ -1,0 +1,12 @@
+Y:\group 3 תשעט\טורצין חני\פרויקט סיום\AQProject\DAL\bin\Debug\DAL.dll.config
+Y:\group 3 תשעט\טורצין חני\פרויקט סיום\AQProject\DAL\bin\Debug\DAL.dll
+Y:\group 3 תשעט\טורצין חני\פרויקט סיום\AQProject\DAL\bin\Debug\DAL.pdb
+Y:\group 3 תשעט\טורצין חני\פרויקט סיום\AQProject\DAL\bin\Debug\EntityFramework.dll
+Y:\group 3 תשעט\טורצין חני\פרויקט סיום\AQProject\DAL\bin\Debug\EntityFramework.SqlServer.dll
+Y:\group 3 תשעט\טורצין חני\פרויקט סיום\AQProject\DAL\bin\Debug\EntityFramework.xml
+Y:\group 3 תשעט\טורצין חני\פרויקט סיום\AQProject\DAL\bin\Debug\EntityFramework.SqlServer.xml
+Y:\group 3 תשעט\טורצין חני\פרויקט סיום\AQProject\DAL\obj\Debug\DAL.dll
+Y:\group 3 תשעט\טורצין חני\פרויקט סיום\AQProject\DAL\obj\Debug\DAL.pdb
+Y:\group 3 תשעט\טורצין חני\פרויקט סיום\AQProject\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+Y:\group 3 תשעט\טורצין חני\פרויקט סיום\AQProject\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+Y:\group 3 תשעט\טורצין חני\פרויקט סיום\AQProject\DAL\obj\Debug\DAL.csproj.CopyComplete

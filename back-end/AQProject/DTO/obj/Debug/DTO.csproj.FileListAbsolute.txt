@@ -1,0 +1,16 @@
+Y:\group 3 תשעט\טורצין חני\פרויקט סיום\AQProject\DTO\bin\Debug\DTO.dll
+Y:\group 3 תשעט\טורצין חני\פרויקט סיום\AQProject\DTO\bin\Debug\DTO.pdb
+Y:\group 3 תשעט\טורצין חני\פרויקט סיום\AQProject\DTO\bin\Debug\DAL.dll
+Y:\group 3 תשעט\טורצין חני\פרויקט סיום\AQProject\DTO\bin\Debug\EntityFramework.dll
+Y:\group 3 תשעט\טורצין חני\פרויקט סיום\AQProject\DTO\bin\Debug\DAL.pdb
+Y:\group 3 תשעט\טורצין חני\פרויקט סיום\AQProject\DTO\bin\Debug\DAL.dll.config
+Y:\group 3 תשעט\טורצין חני\פרויקט סיום\AQProject\DTO\bin\Debug\EntityFramework.xml
+Y:\group 3 תשעט\טורצין חני\פרויקט סיום\AQProject\DTO\obj\Debug\DTO.dll
+Y:\group 3 תשעט\טורצין חני\פרויקט סיום\AQProject\DTO\obj\Debug\DTO.pdb
+Y:\group 3 תשעט\טורצין חני\פרויקט סיום\AQProject\DTO\bin\Debug\Helpers.dll
+Y:\group 3 תשעט\טורצין חני\פרויקט סיום\AQProject\DTO\bin\Debug\Newtonsoft.Json.dll
+Y:\group 3 תשעט\טורצין חני\פרויקט סיום\AQProject\DTO\bin\Debug\Helpers.pdb
+Y:\group 3 תשעט\טורצין חני\פרויקט סיום\AQProject\DTO\bin\Debug\Newtonsoft.Json.xml
+Y:\group 3 תשעט\טורצין חני\פרויקט סיום\AQProject\DTO\obj\Debug\DTO.csprojAssemblyReference.cache
+Y:\group 3 תשעט\טורצין חני\פרויקט סיום\AQProject\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+Y:\group 3 תשעט\טורצין חני\פרויקט סיום\AQProject\DTO\obj\Debug\DTO.csproj.CopyComplete

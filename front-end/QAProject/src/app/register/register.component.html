@@ -1,0 +1,28 @@
+<p>
+    register works!
+  </p>
+  
+  <form (ngSubmit)="register1(); registerModelForm.reset()" class="example-form" #registerModelForm="ngForm">
+      <mat-form-field class="example-full-width">
+          <input matInput placeholder="Name" id="userName" name="userName" required [(ngModel)]="user.userName">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+          <input matInput placeholder="Password" id="password" name="password" required [(ngModel)]="user.password">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+          <input type="url" matInput placeholder="pathDirectory" id="pathDirectory" name="pathDirectory" [(ngModel)]="user.pathDirectory">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+          <mat-select placeholder="Grade" [(ngModel)]="user.grade" id="grade" name="grade">
+              <mat-option *ngFor="let item of grades_list" [value]="item.id">{{item.value}}</mat-option>
+          </mat-select>
+      </mat-form-field> 
+      <mat-form-field class="example-full-width">
+          <mat-select placeholder="Group" [(ngModel)]="user.user_Group" id="user_Group" name="user_Group" >
+              <mat-option *ngFor="let item of groups_list" [value]="item">{{item}}</mat-option>
+            </mat-select>
+      </mat-form-field> 
+      <button mat-button type="submit">Sign up</button>
+  
+    </form>
+     <!--  [disabled]="registerModelForm.valid"-->

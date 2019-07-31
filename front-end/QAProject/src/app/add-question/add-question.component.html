@@ -1,0 +1,20 @@
+<form (ngSubmit)="add_question()" class="example-form" #addQuestionModelForm="ngForm">
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Title" name="questionTitle" id="questionTitle" [(ngModel)]="question.questionTitle">
+      </mat-form-field>
+     
+  <div *ngFor="let item of question.items;let i=index">
+      <mat-form-field *ngIf="item.type==1" class="example-full-width">
+          <textarea matInput placeholder="Question body {{i}}" name="itemValue{{i}}" [(ngModel)]="item.value"></textarea>
+        </mat-form-field>
+        <div *ngIf="item.type==2">
+            <input type="file" value="Add image" (change)="uploadFile($event,i)" accept="image/*">
+            <img  [src]="getImageSrc(item.value)"> 
+        </div>
+  </div>
+  <button mat-button type="button" (click)="addText()">Add text</button>
+  <button mat-button type="button" (click)="attachFile()">Attach file</button>
+  <app-multi-select label="categories" [list]="multiSelectList" (SelectionChanged)="onCategoriesChange($event)"></app-multi-select>
+  <button mat-button type="submit">Save</button>
+  {{question | json}}
+</form>

@@ -1,0 +1,16 @@
+<form (ngSubmit)="add_answer()" class="example-form" #addAnswerModelForm="ngForm">
+  
+<div *ngFor="let item of answers.items;let i=index">
+    <mat-form-field *ngIf="item.type==1" class="example-full-width">
+        <textarea matInput placeholder="Answers body {{i}}" name="itemValue{{i}}" [(ngModel)]="item.value"></textarea>
+      </mat-form-field>
+      <div *ngIf="item.type==2">
+          <input type="file" value="Add image" (change)="uploadFile($event,i)" accept="image/*">
+          <img  [src]="getImageSrc(item.value)"> 
+      </div>
+</div>
+<button mat-button type="button" (click)="addText()">Add text</button>
+<button mat-button type="button" (click)="attachFile()">Attach file</button>
+<button mat-button type="submit">Save</button>
+{{answer | json}}
+</form>
