@@ -1,0 +1,7 @@
+<mat-form-field>
+  <mat-label>{{label}}</mat-label>
+  <mat-select [(ngModel)]="selectedItem" multiple (selectionChange)="selectionChange($event)">
+    <mat-option *ngFor="let item of list" [value]="item.id">{{item.name}}</mat-option>
+  </mat-select>
+</mat-form-field>
+ 

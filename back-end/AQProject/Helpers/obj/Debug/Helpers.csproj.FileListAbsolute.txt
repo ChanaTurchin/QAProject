@@ -1,0 +1,6 @@
+Y:\group 3 תשעט\טורצין חני\פרויקט סיום\AQProject\Helpers\bin\Debug\Helpers.dll
+Y:\group 3 תשעט\טורצין חני\פרויקט סיום\AQProject\Helpers\bin\Debug\Helpers.pdb
+Y:\group 3 תשעט\טורצין חני\פרויקט סיום\AQProject\Helpers\obj\Debug\Helpers.dll
+Y:\group 3 תשעט\טורצין חני\פרויקט סיום\AQProject\Helpers\obj\Debug\Helpers.pdb
+Y:\group 3 תשעט\טורצין חני\פרויקט סיום\AQProject\Helpers\obj\Debug\Helpers.csprojAssemblyReference.cache
+Y:\group 3 תשעט\טורצין חני\פרויקט סיום\AQProject\Helpers\obj\Debug\Helpers.csproj.CoreCompileInputs.cache

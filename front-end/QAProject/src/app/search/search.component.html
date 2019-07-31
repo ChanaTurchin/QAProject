@@ -1,0 +1,8 @@
+<p>
+  search works!
+</p>
+<form (ngSubmit)="search()" class="example-form" #searchModelForm="ngForm">
+<textarea placeholder="searchText" matInput id="searchText" name="searchText" [(ngModel)]="searchText" ></textarea><br>
+<button mat-button type="submit">Search</button>
+</form>
+<app-questions-show label="the questions that found" [questions]="questions"></app-questions-show>
