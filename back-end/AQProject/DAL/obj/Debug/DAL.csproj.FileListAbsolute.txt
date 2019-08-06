@@ -22,3 +22,15 @@ D:\chaniTurchin\QAProject\back-end\AQProject\DAL\obj\Debug\DAL.csproj.CoreCompil
 D:\chaniTurchin\QAProject\back-end\AQProject\DAL\obj\Debug\DAL.csproj.CopyComplete
 D:\chaniTurchin\QAProject\back-end\AQProject\DAL\obj\Debug\DAL.dll
 D:\chaniTurchin\QAProject\back-end\AQProject\DAL\obj\Debug\DAL.pdb
+D:\QAProject5.8R\QAProject\back-end\AQProject\DAL\bin\Debug\DAL.dll.config
+D:\QAProject5.8R\QAProject\back-end\AQProject\DAL\bin\Debug\DAL.dll
+D:\QAProject5.8R\QAProject\back-end\AQProject\DAL\bin\Debug\DAL.pdb
+D:\QAProject5.8R\QAProject\back-end\AQProject\DAL\bin\Debug\EntityFramework.dll
+D:\QAProject5.8R\QAProject\back-end\AQProject\DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\QAProject5.8R\QAProject\back-end\AQProject\DAL\bin\Debug\EntityFramework.xml
+D:\QAProject5.8R\QAProject\back-end\AQProject\DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\QAProject5.8R\QAProject\back-end\AQProject\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+D:\QAProject5.8R\QAProject\back-end\AQProject\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\QAProject5.8R\QAProject\back-end\AQProject\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\QAProject5.8R\QAProject\back-end\AQProject\DAL\obj\Debug\DAL.dll
+D:\QAProject5.8R\QAProject\back-end\AQProject\DAL\obj\Debug\DAL.pdb

@@ -21,7 +21,7 @@ export class QuestionAnswersShowComponent implements OnInit {
      }
 
   ngOnInit() {
-    console.log(this.question);
+    console.log('the question is'+this.question);
   }
 
 }

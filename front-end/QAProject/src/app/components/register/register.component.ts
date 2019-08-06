@@ -24,8 +24,7 @@ export class RegisterComponent implements OnInit {
   constructor(private userService: UserService, private router :Router, private route:ActivatedRoute,){ 
     this.route.params.subscribe((params:Params)=> {
       this.user.userName = params.userName;
-      this.user.password=params.password;
-    });
+   });
   }
   
   ngOnInit() {

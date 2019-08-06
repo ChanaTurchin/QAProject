@@ -12,7 +12,7 @@ import { QuestionAnswersShowComponent } from './components/question-answers-show
 const routes: Routes = [
   {path: '', component: SearchComponent},
   {path:'login', component: LoginComponent},
-  {path:'register/:userName/:userPassword', component:RegisterComponent},
+  {path:'register/:userName', component:RegisterComponent},
   {path:'register', component:RegisterComponent},
   {path:'addQuestion', component : AddQuestionComponent},
   {path:'addAnswer', component:AddAnswerComponent},

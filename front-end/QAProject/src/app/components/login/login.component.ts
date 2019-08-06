@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
     (error: HttpErrorResponse) => {
       console.log(error);
       alert("You aren't logined");
-      this.router.navigate(['register',"this.userName","this.userPassword"]).then((e)=>{
+      this.router.navigate(['register',this.userName]).then((e)=>{
         if(e)
         {console.log("Nevigation is sucssesful!");}
         else

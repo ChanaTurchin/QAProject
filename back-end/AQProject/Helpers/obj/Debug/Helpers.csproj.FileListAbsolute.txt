@@ -10,3 +10,9 @@ D:\chaniTurchin\QAProject\back-end\AQProject\Helpers\obj\Debug\Helpers.csprojAss
 D:\chaniTurchin\QAProject\back-end\AQProject\Helpers\obj\Debug\Helpers.csproj.CoreCompileInputs.cache
 D:\chaniTurchin\QAProject\back-end\AQProject\Helpers\obj\Debug\Helpers.dll
 D:\chaniTurchin\QAProject\back-end\AQProject\Helpers\obj\Debug\Helpers.pdb
+D:\QAProject5.8R\QAProject\back-end\AQProject\Helpers\bin\Debug\Helpers.dll
+D:\QAProject5.8R\QAProject\back-end\AQProject\Helpers\bin\Debug\Helpers.pdb
+D:\QAProject5.8R\QAProject\back-end\AQProject\Helpers\obj\Debug\Helpers.csprojAssemblyReference.cache
+D:\QAProject5.8R\QAProject\back-end\AQProject\Helpers\obj\Debug\Helpers.csproj.CoreCompileInputs.cache
+D:\QAProject5.8R\QAProject\back-end\AQProject\Helpers\obj\Debug\Helpers.dll
+D:\QAProject5.8R\QAProject\back-end\AQProject\Helpers\obj\Debug\Helpers.pdb

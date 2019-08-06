@@ -1,4 +1,8 @@
 <p>
   question-answers-show works!
 </p>
-<p>{{questoion}}</p>
+<p><h1>{{questoion.questionTitle}}</h1></p>
+<div *ngFor="let i of item.items">
+  <span *ngIf="i.type==1">{{i.value}}</span>
+  <span *ngIf="i.type==2">...</span>
+</div>
