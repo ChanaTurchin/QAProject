@@ -1,4 +1,5 @@
-﻿using DTO;
+﻿using DAL;
+using DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,31 +18,37 @@ namespace API.Controllers
         {
             try
             {
-                if (BL.UserManager.IsExist(user.UserName,user.Password))
+                User u = BL.UserManager.IsExist(user.UserName, user.Password);
+                if (u !=null)
                     return BadRequest("user is registered already ");
                 BL.UserManager.Register(user);
                 return Ok();
             }
-            catch(Exception e)
-            {
-                return BadRequest("system error");
-            }
-            
-        }
-        [HttpPost]
-        [Route("login")]
-        public IHttpActionResult Login(UserDTO user)
-        { 
-            try
-            {
-                if (BL.UserManager.IsExist(user.UserName, user.Password))
-                    return Ok();
-
-                return BadRequest("user not registered");
-            }
             catch (Exception e)
             {
                 return BadRequest("system error");
+            }
+
+        }
+
+
+        [HttpPost]
+        [Route("login")]
+        public IHttpActionResult Login(Newtonsoft.Json.Linq.JObject data)
+        { 
+            try
+            {
+                string userName = data["userName"].ToObject<string>();
+                string userPassword = data["userPassword"].ToObject<string>();
+                User user = BL.UserManager.IsExist(userName, userPassword);
+                if (user == null)
+                    return BadRequest();
+                UserDTO userDTO = Converter.Convert(user);
+                return Ok(userDTO);
+            }
+            catch (Exception e)
+            {
+                return BadRequest("system error!");
             }
         }
     }

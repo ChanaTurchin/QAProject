@@ -1,0 +1,13 @@
+<p *ngIf="answers.length == 0">There aren't answers to that question</p>
+
+  <mat-list *ngIf="answers.length != 0">
+    <div *ngFor="let item of answers">
+        <div *ngFor="let i of item.items">
+            <span *ngIf="i.type==1">{{i.value}}</span>
+            <span *ngIf="i.type==2">...</span>
+          </div>
+    </div>
+    <mat-divider></mat-divider>
+
+  </mat-list>
+  

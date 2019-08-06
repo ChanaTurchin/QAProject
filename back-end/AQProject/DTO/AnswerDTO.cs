@@ -10,6 +10,7 @@ namespace DTO
     {
         public int AnswerId { get; set; }
         public int QuestionId { get; set; }
+        public List<QuestionItemDTO> Items { get; set; }
         public int Answer_userId { get; set; }
         public Nullable<bool> Checked { get; set; }
         public Nullable<System.DateTime> AnswerDate { get; set; }
@@ -18,5 +19,7 @@ namespace DTO
         public  QuestionDTO Question { get; set; }
         public  UserDTO User { get; set; }
         public  List<CommentDTO> Comments { get; set; }
+
     }
 }
+

@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AnswerManger.cs" />
     <Compile Include="CategoryManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuestionManager.cs" />

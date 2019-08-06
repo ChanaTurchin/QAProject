@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from "rxjs";
 import { environment } from 'src/environments/environment';
 import { UserModel } from '../models/user.model';
+import { Params } from '@angular/router';
 
 @Injectable()
 export class UserService {
@@ -12,14 +13,19 @@ export class UserService {
     constructor(private http: HttpClient) { }
 
 
-    login(user: UserModel): Observable<any> {
-        console.log(user);
-        return this.http.post(this.baseUrl + 'login', user);
+    login(userName: string, userPassword: string): Observable<UserModel> {
+        console.log(userName, userPassword);
+        var data = {userName : userName, userPassword:userPassword};
+       console.log(data);
+        // let formData: FormData = new FormData();
+        // formData.append('userName', userName);
+        // formData.append('userPassword', userPassword);
+        return this.http.post(this.baseUrl + 'login', data) as Observable<UserModel>;
     }
 
-    register(user: UserModel): Observable<any> {
+    register(user: UserModel): Observable<boolean> {
         console.log("I success!!!!!!!!!!!!");
         console.log(user);
-        return this.http.post(this.baseUrl + 'register', user);
+        return this.http.post(this.baseUrl + 'register', user) as Observable<boolean>;
     }
 }

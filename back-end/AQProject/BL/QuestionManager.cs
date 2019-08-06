@@ -11,9 +11,9 @@ namespace BL
     public static class QuestionManager
     {
         private static readonly ProjectChaniRuthiEntities db = DB.Instance;
-        public static bool IsExist(int Question_userId, string QuestionTitle)
+        public static bool IsExist(int Question_userID, string QuestionTitle)
         {
-            return db.Questions.Any(q => q.question_userId == Question_userId && q.questionTitle == QuestionTitle);
+            return db.Questions.Any(x => x.question_userId == Question_userID  /*&& cast([x.questionTitle] as nvarchar(max)) == QuestionTitle*/);
         }
         public static void AddQuestion(QuestionDTO question)
         {
@@ -23,10 +23,13 @@ namespace BL
           
         }
 
-        public static void AddRequirement(QuestionDTO question)
+        public static void AddRequirement(QuestionDTO question, UserDTO user)
         {
             Question q = db.Questions.FirstOrDefault(x => x.questionId == question.QuestionId);
+            User u = db.Users.FirstOrDefault(x => x.userId == user.UserId);
             q.requirement++;
+            q.Votes.Add(new Vote() { Question = q, User = u });
+            //q.Votes.Add(new Vote() { questionId = question.QuestionId, userId = user.UserId});
             db.SaveChanges();
         }
     }

@@ -10,3 +10,15 @@ Y:\group 3 תשעט\טורצין חני\פרויקט סיום\AQProject\DAL\obj\
 Y:\group 3 תשעט\טורצין חני\פרויקט סיום\AQProject\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
 Y:\group 3 תשעט\טורצין חני\פרויקט סיום\AQProject\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 Y:\group 3 תשעט\טורצין חני\פרויקט סיום\AQProject\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\chaniTurchin\QAProject\back-end\AQProject\DAL\bin\Debug\DAL.dll.config
+D:\chaniTurchin\QAProject\back-end\AQProject\DAL\bin\Debug\DAL.dll
+D:\chaniTurchin\QAProject\back-end\AQProject\DAL\bin\Debug\DAL.pdb
+D:\chaniTurchin\QAProject\back-end\AQProject\DAL\bin\Debug\EntityFramework.dll
+D:\chaniTurchin\QAProject\back-end\AQProject\DAL\bin\Debug\EntityFramework.SqlServer.dll
+D:\chaniTurchin\QAProject\back-end\AQProject\DAL\bin\Debug\EntityFramework.xml
+D:\chaniTurchin\QAProject\back-end\AQProject\DAL\bin\Debug\EntityFramework.SqlServer.xml
+D:\chaniTurchin\QAProject\back-end\AQProject\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+D:\chaniTurchin\QAProject\back-end\AQProject\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+D:\chaniTurchin\QAProject\back-end\AQProject\DAL\obj\Debug\DAL.csproj.CopyComplete
+D:\chaniTurchin\QAProject\back-end\AQProject\DAL\obj\Debug\DAL.dll
+D:\chaniTurchin\QAProject\back-end\AQProject\DAL\obj\Debug\DAL.pdb

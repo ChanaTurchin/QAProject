@@ -1,0 +1,23 @@
+<mat-label>{{label}}</mat-label>
+
+<mat-list>
+  <div *ngFor="let item of questions">
+    <!-- <label *ngIf="item.answers.length == 0" [(ngModel)]="item.requirement">Requirement: </label>
+      <span *ngIf="item.answers.length == 0" >{{item.requirement}}</span>  -->
+    <input matInput *ngIf="item.answers.length == 0" [(ngModel)]="item.requirement" type="number" placeholder="Requirement" value="{{item.requirement}}" >
+    <button mat-button (click)="addRequirement(item)">add Requirement</button>
+    <button mat-button id="item.questionId" (click)="showQuestionAnswer(item)">{{item.questionTitle}}</button>
+    <div *ngFor="let i of item.items">
+      <span *ngIf="i.type==1">{{i.value}}</span>
+      <span *ngIf="i.type==2">...</span>
+    </div>
+    <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Date" [value]="item.questionDate" disabled>
+        <!-- <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle> -->
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <p *ngIf="item.user != null">{{item.user.userName}}</p>
+      <!-- <app-answers-show [answers]="item.answers"></app-answers-show> -->
+      <mat-divider></mat-divider>
+</div>
+</mat-list>

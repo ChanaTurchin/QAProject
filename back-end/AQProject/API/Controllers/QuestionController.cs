@@ -18,23 +18,25 @@ namespace API.Controllers
         {
             try
             {
-                if (BL.QuestionManager.IsExist(question.Question_userId, question.QuestionTitle))
-                    return BadRequest("this question been already");
+                //if (BL.QuestionManager.IsExist(question.Question_userId, question.QuestionTitle))
+                //    return BadRequest("this question been already");
                 QuestionManager.AddQuestion(question);
                 return Ok();
             }
-            catch (Exception e)
+             catch (Exception e)
             {
                 return BadRequest("system error"+e);
             }
         }
         [Route("addRequirement")]
         [HttpPost]
-        public IHttpActionResult AddRequirement(QuestionDTO question)
+        public IHttpActionResult AddRequirement(Newtonsoft.Json.Linq.JObject data)
         {
             try
             {
-                QuestionManager.AddRequirement(question);
+                QuestionDTO question = data["question"].ToObject<QuestionDTO>();
+                UserDTO user = data["user"].ToObject<UserDTO>();
+                QuestionManager.AddRequirement(question, user);
                 return Ok();
 
             }

@@ -16,9 +16,9 @@ namespace BL
             db.Users.Add(Converter.Convert(user));
           db.SaveChanges();
         }
-        public static bool IsExist(string userName,string password)
+        public static User IsExist(string userName,string userPassword)
         {
-            return db.Users.Any(u => u.userName == userName && u.password == password);
+            return db.Users.FirstOrDefault(u => u.userName == userName && u.password == userPassword);
         }
     }
 }

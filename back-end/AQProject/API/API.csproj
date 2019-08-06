@@ -194,6 +194,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\AnswerController.cs" />
     <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\FilesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -300,6 +301,10 @@
     <ProjectReference Include="..\BL\BL.csproj">
       <Project>{ca035de3-203b-4db3-b09d-a791a0911139}</Project>
       <Name>BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{416DE253-A39F-47AB-97CE-7E125232F703}</Project>
+      <Name>DAL</Name>
     </ProjectReference>
     <ProjectReference Include="..\DTO\DTO.csproj">
       <Project>{70D2CC22-B9BC-467E-B9CD-1AA99DEBE128}</Project>

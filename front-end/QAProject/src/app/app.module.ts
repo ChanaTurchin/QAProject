@@ -6,25 +6,30 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { MatFormFieldModule, MatInputModule, MatSelectModule, MatButtonModule, MatListModule } from '@angular/material';
+import { MatFormFieldModule, MatInputModule, MatSelectModule, MatButtonModule, MatListModule, MatDatepickerModule, MatNativeDateModule } from '@angular/material';
 
 //Components
 import { AppComponent } from './app.component';
-import { RegisterComponent } from './register/register.component';
-import { LoginComponent } from './login/login.component';
-import { AddQuestionComponent } from './add-question/add-question.component'
-import { SearchComponent}from './search/search.component'
-import { MultiSelectComponent } from './multi-select/multi-select.component';
-import { QuestionsShowComponent } from './questions-show/questions-show.component';
-import { AddAnswerComponent } from './add-answer/add-answer.component';
-
+import { RegisterComponent } from './components/register/register.component';
+import { LoginComponent } from './components/login/login.component';
+import { AddQuestionComponent } from './components/add-question/add-question.component'
+import { SearchComponent}from './components/search/search.component'
+import { MultiSelectComponent } from './components/multi-select/multi-select.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { QuestionsShowComponent } from './components/questions-show/questions-show.component';
 //Services
+
 import { UserService } from './shared/services/user.service';
 import { QuestionService } from './shared/services/question.service';
+import { AnswerService } from './shared/services/answer.service';
 import { FileService } from './shared/services/file.service';
 import { SearchService } from './shared/services/search.service';
 import { CategoryService } from './shared/services/category.service';
-import { AnswerService} from './shared/services/answer.service';
+import { AddAnswerComponent } from './components/add-answer/add-answer.component';
+import { AnswersShowComponent } from './components/answers-show/answers-show.component';
+import { QuestionAnswersShowComponent } from './components/question-answers-show/question-answers-show.component';
+
+
 
 @NgModule({
   declarations: [
@@ -34,8 +39,11 @@ import { AnswerService} from './shared/services/answer.service';
     AddQuestionComponent,
     SearchComponent,
     MultiSelectComponent,
+    AddAnswerComponent,
+    PageNotFoundComponent,
     QuestionsShowComponent,
-    AddAnswerComponent
+    AnswersShowComponent,
+    QuestionAnswersShowComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +57,9 @@ import { AnswerService} from './shared/services/answer.service';
     MatInputModule,
     MatSelectModule,
     MatButtonModule,
-    MatListModule
+    MatListModule,
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   providers: [
     UserService,
